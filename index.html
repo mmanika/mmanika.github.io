@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>MedPill</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="dist/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="dist/css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p><a href="#">Report bug/issues</a></p>
+        <p><a href="#">Help</a></p>
+        <p><a href="#" class="close-panel"><i class="icon f7-icons">close_round_fill</i></a></p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!--Login screen-->
+      <div class="login-screen modal-in">
+      <!-- Default view-page layout -->
+      <div class="view">
+        <div class="page">
+          <!-- page-content has additional login-screen content -->
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">MedPill</div>
+              <img src="css/pills.png" alt="Logo">
+            <!-- Login form -->
+            <form id="first">
+              <div class="list-block" id="login">
+                <ul>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Username</div>
+                      <div class="item-input">
+                        <input type="text" name="username" placeholder="Username" id="username">
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">Password</div>
+                      <div class="item-input">
+                        <input type="password" name="password" placeholder="Password">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <a href="#" class="item-link list-button" id="signIn">Sign In</a>
+                      <a href="#" id="password">Forgot password</a>
+                  </li>
+                </ul> 
+                  <div class="list-block-label"><a href="#" class="register">Register</a></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+    <!-- Views, and they are tabs-->
+    <!-- We need to set "toolbar-through" class on it to keep space for our tab bar-->
+    <div class="views tabs toolbar-through">
+      <!-- Your first view, it is also a .tab and should have "active" class to make it visible by default-->
+      <div id="view-1" class="view view-main tab active">
+        <!-- Pages-->
+          <div class="navbar">
+          <div class="navbar-inner">
+              <div class="left">
+            <a href="index.html" class="link">
+                <i class="icon icon-back"></i>
+                <span>Back</span>
+            </a>
+        </div>
+            <div class="center">Timeline</div>
+              <div class="right">
+            <a href="#" class="link open-panel">
+                <i class="icon icon-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>    
+          </div>       
+        </div>
+        <div class="pages">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index-1" class="page">
+              
+            <div class="speed-dial">
+                <a href="#" class="floating-button color-red">
+                  <!-- First icon is visible when Speed Dial actions are closed -->
+                  <i class="f7-icons">add</i>
+                  <!-- Second icon is visible when Speed Dial actions are opened -->
+                  <i class="f7-icons">close</i>
+                </a>
+                <!-- Speed Dial Actions -->
+                <div class="speed-dial-buttons">
+                  <!-- First Speed Dial button -->
+                  <a href="addmedication.html" class="floating-button color-red">
+                    <i class="f7-icons">alarm_fill</i>
+                  </a>
+                  <!-- Second Speed Dial  button -->
+                  <a href="addappointment.html" class="floating-button color-red">
+                    <i class="f7-icons">add_round_fill</i>
+                  </a>
+                  <!-- Third Speed Dial  button -->
+                  <a href="addprescription.html" class="floating-button color-red">
+                    <i class="f7-icons">drawer_fill</i>
+                  </a>
+                </div>
+              </div>          
+            
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block">
+                <!-- Buttons row as tabs controller -->
+                <div class="buttons-row">
+                  <!-- Link to 1st tab, active -->
+                  <a href="#tab1" class="tab-link active button">Medications</a>
+                  <!-- Link to 2nd tab -->
+                  <a href="#tab2" class="tab-link button">Appointments</a>
+                  <!-- Link to 3rd tab -->
+                  <a href="#tab3" class="tab-link button">Rx Refill</a>
+                </div>
+                <div class="tabs-animated-wrap">
+        
+                    <!-- Tabs, tabs wrapper -->
+                    <div class="tabs">
+                      <!-- Tab 1, active by default -->
+                      <div id="tab1" class="tab active">
+                        <div class="timeline">
+                    <div class="timeline-item">
+                <div class="timeline-item-date">Morning</div>
+                <div class="timeline-item-divider"></div>
+                <div class="timeline-item-content">
+                <div class="timeline-item-time">9:00 AM</div>  
+                    <div class="timeline-item-inner"><div class="timeline-item-text">Take 1 pill of 10mg pramlintide before meals</div></div>
+                </div>
+              </div>
+                   <div class="timeline-item">
+                <div class="timeline-item-date">Afternoon</div>
+                <div class="timeline-item-divider"></div>
+                <div class="timeline-item-content">
+                <div class="timeline-item-time">2:30 PM</div> 
+                    <div class="timeline-item-inner"><div class="timeline-item-text">Take 5mg lisinopril two times with water</div></div>
+                </div> 
+              </div>
+                        <div class="timeline-item">
+                <div class="timeline-item-date">Evening</div>
+                <div class="timeline-item-divider"></div>
+                <div class="timeline-item-content">
+                <div class="timeline-item-time">5:15 PM</div> 
+                    <div class="timeline-item-inner"><div class="timeline-item-text">Take 1 folic acid capsule after blood work check</div></div>
+                </div>
+              </div>
+                        <div class="timeline-item">
+                <div class="timeline-item-date">Night</div>
+                <div class="timeline-item-divider"></div>
+                <div class="timeline-item-content">
+                <div class="timeline-item-time">10:02 PM</div>
+                    <div class="timeline-item-inner"><div class="timeline-item-text">Take 0.1 unit/Kg humulin injection</div></div>
+                </div>
+              </div>                     
+              </div>        
+          </div>
+ 
+          <!-- Tab 2 -->
+          <div id="tab2" class="tab">
+              <img src="css/hospital.png" alt="Logo">
+              <div class="content-block-title date">4 Sep</div>       
+      <div class="card">
+          <div class="card-header">11:00 AM</div>
+            <div class="card-content">
+            <div class="card-content-inner">A new appointment is set with Dr. Simons for blood work check. Complete the patient forms for record keeping </div>
+  </div>
+</div> 
+    <div class="content-block-title date">10 Oct</div>  
+    <div class="card">
+        <div class="card-header">2:00 PM</div>
+  <div class="card-content">
+    <div class="card-content-inner">An appointment is rescheduled with Dr. Philips for routine checkup. Carry health insurance card to the Doctor's office</div>
+  </div>
+</div>
+  <div class="content-block-title date">8 Nov</div>  
+    <div class="card">
+        <div class="card-header">10:00 AM</div>
+  <div class="card-content">
+    <div class="card-content-inner">There is an appointment scheduled with Dr. Meyer to discuss the new problem of dry mouth and itchy skin </div>
+  </div>
+</div> 
+            </div>
+ 
+          <!-- Tab 3 -->
+          <div id="tab3" class="tab">
+              <img src="css/drugs.png" alt="Logo">
+            <div class="content-block-title date">5 Sep</div>       
+      <div class="card">
+          <div class="card-header">11:00 AM</div>
+            <div class="card-content">
+            <div class="card-content-inner">Prescription refill for pramlintide 10mg 30 capsules </div>
+  </div>
+</div> 
+        <div class="content-block-title date">10 Oct</div>       
+      <div class="card">
+          <div class="card-header">4:00 PM</div>
+            <div class="card-content">
+            <div class="card-content-inner">Prescription refill for lisinopril 5mg 60 tablets</div>
+  </div>
+</div> 
+        <div class="content-block-title date">9 Nov</div>       
+      <div class="card">
+          <div class="card-header">12:00 PM</div>
+            <div class="card-content">
+            <div class="card-content-inner">Prescription refill for folic acid green 120 capsules  </div>
+  </div>
+</div>     
+              
+          </div>       
+        </div>
+        
+      </div> 
+  </div>
+         
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Second view (for second wrap)-->
+      <div id="view-2" class="view tab">
+        <!-- We can make with view with navigation, let's add Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!--<div class="left">
+            <a href="#" class="link">
+                <i class="icon icon-back"></i>
+                <span>Back</span>
+            </a>
+        </div>-->
+            <div class="center">Notifications</div>
+              <div class="right">
+            <a href="#" class="link open-panel">
+                <i class="icon icon-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>    
+          </div>
+        </div>      
+              
+         <div class="pages">
+          <div data-page="index-2" class="page">
+            <div class="page-content">
+              <div class="content-block">
+                  <div id="group"><i class="f7-icons">bell_fill</i><strong>3 Notifications</strong><a href="#" id="clickMe"><button class="button" type="button">Demo Alert</button></a></div>   
+              <div class="card">
+                  <div class="card-content">
+    <div class="card-content-inner">You are scheduled to take 0.1 unit/Kg Humulin injection at 10:02 PM!</div>
+  </div>
+  <div class="card-footer">10 min ago</div>
+</div>
+              <div class="card">
+                  <div class="card-content">
+    <div class="card-content-inner">You have an appointment with Dr. Simons tomorrow at 11:00 AM!</div>
+  </div>
+  <div class="card-footer">1 hr ago</div>
+</div>
+             <div class="card">
+                  <div class="card-content">
+    <div class="card-content-inner">You have a prescription refill for Pramlintide coming up in 1 week</div>
+  </div>
+  <div class="card-footer">1 hr ago</div>
+</div> 
+        
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div id="view-3" class="view tab">
+        <div class="pages navbar-fixed">
+          <div data-page="index-3" class="page">
+              <div class="navbar">
+              <div class="navbar-inner">
+                  <!--<div class="left">
+            <a href="#" class="link">
+                <i class="icon icon-back"></i>
+                <span>Back</span>
+            </a>
+        </div>-->
+            <div class="center">Resources</div>
+                  <div class="right">
+            <a href="#" class="link open-panel">
+                <i class="icon icon-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>         
+          </div>
+            </div>
+            <div class="page-content">
+              <div class="content-block">
+                  <div class="buttons-row">
+        <!-- Link to 1st tab, active -->
+        <a href="#t1" class="tab-link active button">Sites</a>
+        <!-- Link to 2nd tab -->
+        <a href="#t2" class="tab-link button">News</a>
+      </div>  
+            <div class="tabs-animated-wrap">
+        
+        <!-- Tabs, tabs wrapper -->
+        <div class="tabs">
+          <!-- Tab 1, active by default -->
+          <div id="t1" class="tab active">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-content-inner">Diabetes is a chronic condition that affects the way the body processes blood glucose. Diabetes medicines can help to control your Diabetes which depends on the type of Diabetes. Treatment strategies include daily blood sugar monitoring, insulin therapy, a healthy diet and exercise.</div>
+              </div>
+            </div>
+              <div class="list-block accordion-list">
+  <ul>
+    <li class="accordion-item"><a href="http://www.webmd.com/diabetes" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">webmd.com</div>
+            </div></a>
+                </li>
+    <li class="accordion-item"><a href="http://www.mayoclinic.org/diabetes" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">mayoclinic.org</div>
+            </div></a>
+                </li>
+    <li class="accordion-item"><a href="http://http://www.diabetes.org/" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">diabetes.org</div>
+        </div></a></li>
+      
+    <li class="accordion-item"><a href="http://www.medicinenet.com/diabetes_mellitus/article.htm" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">medicinenet.com</div>
+        </div></a>
+              </li>
+            </ul>
+              </div>         
+          </div>
+ 
+          <!-- Tab 2 -->
+          <div id="t2" class="tab">
+            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+        <div class="searchbar-input">
+            <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+        </div><a href="#" class="searchbar-cancel">Cancel</a>
+        </form>      
+             <div class="content-block-title"><strong>Connect with Health IT News</strong></div>
+<div class="list-block accordion-list">
+  <ul>
+    <li class="accordion-item"><a href="http://www.healthcareitnews.com/news/healthcare-ai-poised-explosive-growth-big-cost-savings" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">Healthcare AI to see great growth</div>
+            </div></a>
+                </li>
+    <li class="accordion-item"><a href="http://www.healthcareitnews.com/news/whats-next-health-information-exchanges" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">What's up for health information exchange</div>
+            </div></a>
+                </li>
+    <li class="accordion-item"><a href="http://www.healthcareitnews.com/blog/predictive-analytics-drive-down-hospital-readmissions" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">Predictive Analytics to help readmissions</div>
+            </div></a>
+            </ul>
+              </div>
+              
+              <div class="content-block-title"><strong>Health IT News from HIMSS</strong></div>
+<div class="list-block accordion-list">
+  <ul>
+    <li class="accordion-item"><a href="http://www.himss.org/news/himss-17-year-precision-health" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">The year of Precision Health</div>
+            </div></a>
+                </li>
+    <li class="accordion-item"><a href="http://www.himss.org/news/evisit-just-beginning" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">The Evisit is just the Beginning</div>
+            </div></a>
+                </li>
+    <li class="accordion-item"><a href="http://www.himss.org/news/information-sharing-what-it-how-do-it-why-does-it-matter" class="item-content item-link" target="_blank">
+        <div class="item-inner">
+          <div class="item-title">How to do Information sharing</div>
+            </div></a>
+            </ul>
+              </div>        
+            
+            </div>         
+        </div>  
+      </div>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="view-4" class="view tab">
+        <div class="pages navbar-fixed">
+          <div data-page="index-4" class="page">
+            <div class="navbar">
+              <div class="navbar-inner">
+                  <!--<div class="left">
+            <a href="#" class="link">
+                <i class="icon icon-back"></i>
+                <span>Back</span>
+            </a>
+        </div>-->
+            <div class="center">Profile</div>
+                  <div class="right">
+            <a href="#" class="link open-panel">
+                <i class="icon icon-bars"></i>
+                <span>Menu</span>
+            </a>
+        </div>    
+                  
+              </div>
+            </div>
+            <div class="page-content">
+            <i class="f7-icons size-25">camera_fill</i>
+              <div class="list-block" id="list">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">person</i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Name</div>
+                        <div class="item-input">
+                          <input type="text" placeholder="Your name">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  
+                    <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">email</i></div>
+        <div class="item-inner">
+          <div class="item-title label">E-mail</div>
+          <div class="item-input">
+            <input type="email" placeholder="E-mail">
+          </div>
+        </div>
+      </div>
+    </li>
+        <li>
+      <div class="item-content">
+        <div class="item-media"><i class="icon f7-icons">phone</i></div>
+        <div class="item-inner">
+          <div class="item-title label">Phone</div>
+          <div class="item-input">
+            <input type="tel" placeholder="Phone">
+          </div>
+        </div>
+      </div>
+    </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">persons</i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Gender</div>
+                        <div class="item-input">
+                            <input type="radio" value="male" name="gender">Male
+                            <input type="radio" value="female" name="gender">Female                    
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">calendar</i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Birth date</div>
+                        <div class="item-input">
+                          <input type="date" placeholder="Birth day">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                   <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon f7-icons">person_fill</i></div>
+                      <div class="item-inner"> 
+                        <div class="item-title label">Ethnicity</div>
+                        <div class="item-input">
+                               <select>
+                                <option>American Indian or Alaska Native</option>
+                                <option>Asian</option>
+                                <option>Black or African American</option>
+                                <option>Hispanic or Latino</option>
+                                <option>Native Hawaiian or Other Pacific Islander</option>
+                                <option>White</option>
+                                <option>Others</option>                   
+                                <option>Unknown</option> 
+                                </select>
+                        </div>
+                      </div>
+                    </div>
+                  </li>     
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom Tabbar-->
+      <div class="toolbar tabbar tabbar-labels">
+        <div class="toolbar-inner">
+            <a href="#view-1" class="tab-link active"><i class="f7-icons">calendar</i><span class="tabbar-label">Timeline</span></a><a href="#view-2" class="tab-link"><i class="f7-icons"><span class="badge bg-red">3</span>bell</i><span class="tabbar-label">Notifications</span></a><a href="#view-3" class="tab-link"> <i class="f7-icons">book</i><span class="tabbar-label">Resources</span></a><a href="#view-4" class="tab-link"> <i class="f7-icons">person</i><span class="tabbar-label">Profile</span></a></div>
+      </div>
+      </div>
+            
+      <!-- Page, data-page contains page name-->
+          
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

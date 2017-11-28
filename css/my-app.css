@@ -1,0 +1,158 @@
+/* Your app custom files in this file */
+#view-1 .content-block {
+    margin:50px 0 30px 0;
+}
+
+#view-3 .content-block {
+    margin:5px 0 40px 0;
+}
+
+#view-1 .button {
+    font-size: 12px;
+}
+
+#tab2 .card-header {
+    font-size: 12px;
+}
+
+#tab3 .card-header {
+    font-size: 12px;
+}
+
+.f7-icons .badge {
+    margin-left: -55px;
+    top: 2px;
+}
+
+.size-25 { 
+    font-size: 35px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-block ul {
+    text-align: center;
+    font-size: 16px;
+}
+
+#password {
+    text-decoration: underline;
+    font-size:12px;
+}
+
+
+.register {
+    background-color: #345f41; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px;
+    
+}
+
+img {
+    width:50px;
+    height:50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.demo-card-header-pic .card-header {
+    height: 30vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+.speed-dial.speed-dial-opened .speed-dial-buttons .floating-button i {
+    opacity: 1;
+    -webkit-transform: translate3d(-50%,-50%,0) rotate(0deg) scale(.7)
+}
+
+#tab2 img {
+    display: block;
+    margin-top: 30px;
+
+}
+
+#tab3 img {
+    display: block;
+    margin-top: 30px;
+    
+}
+
+.searchbar {
+    margin-top: 20px;
+}
+
+.list-block .item-title {
+    font-size: 13px;
+}
+
+.accordion-item .item-title {
+    font-size: 16px;
+    color: orange;
+}
+
+.size-25 {
+    margin-top: 30px;
+}
+
+#list .item-title.label {
+    font-size: 16px;
+}
+
+#login .item-title.label {
+    font-size: 16px;
+}
+
+#group i{
+    margin-top: 20px;
+}
+
+#view-2 .button {
+    float: right;
+    margin-top: 20px;
+    background-color: darkgoldenrod;
+    color: white;
+    border: none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#view-2 .button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+#view-2 .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+
+div[data-page='addtimeline'] .size-22  {
+    font-size: 18px;
+}
+
+div[data-page='addtimeline'] .content {
+    text-align: center;
+}
+
